@@ -20,6 +20,9 @@ public class ItemInit {
     public static final RegistryObject<Item> DRAKEN_TAB = ITEMS.register("draken_tab",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> STING_OF_SACRAMENT = ITEMS.register("sting_of_sacrament",
+            () -> new StingOfSacrament(Tiers.DIAMOND, 5, -2f, new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
