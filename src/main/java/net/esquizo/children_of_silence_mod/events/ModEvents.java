@@ -2,7 +2,7 @@ package net.esquizo.children_of_silence_mod.events;
 
 import net.esquizo.children_of_silence_mod.ChildrenOfSilence;
 import net.esquizo.children_of_silence_mod.Init.ItemInit;
-import net.esquizo.children_of_silence_mod.items.StingOfSacrament;
+import net.esquizo.children_of_silence_mod.items.draken.StingOfSacrament;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
