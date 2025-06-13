@@ -35,6 +35,15 @@ public class CreativeTabInit {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> HAYATE_TAB = CREATIVE_MODE_TABS.register("hayate_tab",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ItemInit.HAYATE_TAB.get()))
+                    .title(Component.translatable("creativetab.draken_tab"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ItemInit.ELVEN_KATANA.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
