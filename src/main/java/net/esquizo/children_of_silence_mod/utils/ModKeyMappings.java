@@ -7,6 +7,7 @@ import net.minecraftforge.client.settings.KeyConflictContext;
 
 public class ModKeyMappings {
     public static final String MAGIC_CATEGORY = "key.categories.magic." + ChildrenOfSilence.MOD_ID;
+    public static final String ABILITY_CATEGORY = "key.categories.ability." + ChildrenOfSilence.MOD_ID;
 
     //Open spell book menu
     public static final KeyMapping SPELL_MENU_KEY = new KeyMapping(
@@ -24,4 +25,13 @@ public class ModKeyMappings {
             InputConstants.KEY_Z,
             MAGIC_CATEGORY
     );
+    //Use weapon ability
+    public static final KeyMapping WEAPON_ABILITY_KEY = new KeyMapping(
+            "key." + ChildrenOfSilence.MOD_ID + ".use_weapon_ability",
+            KeyConflictContext.IN_GAME,
+            InputConstants.Type.KEYSYM,
+            InputConstants.KEY_R,
+            ABILITY_CATEGORY
+    );
+
 }

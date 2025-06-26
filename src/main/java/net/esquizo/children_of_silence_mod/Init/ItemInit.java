@@ -52,9 +52,6 @@ public class ItemInit {
     public static final RegistryObject<Item> MAGIC_DEBUG = ITEMS.register("magic_debug",
             () -> new MagicDebug(new Item.Properties()));
 
-    public static final RegistryObject<Item> STING_OF_SACRAMENT = ITEMS.register("sting_of_sacrament",
-            () -> new StingOfSacrament(Tiers.DIAMOND, 5, -2f, new Item.Properties()));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

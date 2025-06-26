@@ -20,6 +20,7 @@ public class ClientModEvents {
     public static void onKeyRegister(RegisterKeyMappingsEvent event){
         event.register(ModKeyMappings.SPELL_MENU_KEY);
         event.register(ModKeyMappings.USE_SPELL_KEY);
+        event.register(ModKeyMappings.WEAPON_ABILITY_KEY);
     }
 
     @SubscribeEvent

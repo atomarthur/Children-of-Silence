@@ -27,5 +27,9 @@ public class ClientKeyInputHandler {
         if (ModKeyMappings.USE_SPELL_KEY.consumeClick()){
             NetworkingHandler.sendToServer(new UseSpellC2S());
         }
+        // Use weapon ability
+        if (ModKeyMappings.WEAPON_ABILITY_KEY.consumeClick()){
+            NetworkingHandler.sendToServer(new UseSpellC2S());
+        }
     }
 }
