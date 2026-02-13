@@ -1,6 +1,7 @@
 package net.skizo.cosmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,6 +14,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.skizo.cosmod.init.ItemInit;
+import net.skizo.cosmod.init.MenuInit;
+import net.skizo.cosmod.init.SpellInit;
+import net.skizo.cosmod.screen.SpellBookScreen;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
 
@@ -22,12 +26,13 @@ public class COSMOD
     public static final String MODID = "cosmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public COSMOD(FMLJavaModLoadingContext context)
-    {
+    public COSMOD(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
         ItemInit.register(modEventBus);
+        SpellInit.init();
+        MenuInit.register(modEventBus);
         GeckoLib.initialize();
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -52,7 +57,7 @@ public class COSMOD
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(MenuInit.SPELL_BOOK_MENU.get(), SpellBookScreen::new);
         }
     }
 }
